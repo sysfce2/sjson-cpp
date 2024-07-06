@@ -228,11 +228,11 @@ jobs:
         with:
           args: 'python3 make.py -ci -compiler ${{ matrix.compiler }} -config Release -cpu x64 -unit_test'
 
-  osx-11:
-    runs-on: macos-11
+  osx-12:
+    runs-on: macos-12
     strategy:
       matrix:
-        compiler: [xcode12, xcode13]
+        compiler: [xcode13]
     steps:
       - name: Git checkout
         uses: actions/checkout@v3
@@ -259,11 +259,11 @@ jobs:
       - name: Building for iOS (release-arm64)
         run: python3 make.py -ci -compiler ios -config Release -build
         
-  osx-12:
-    runs-on: macos-12
+  osx-14:
+    runs-on: macos-14
     strategy:
       matrix:
-        compiler: [xcode14]
+        compiler: [xcode14, xcode15]
     steps:
       - name: Git checkout
         uses: actions/checkout@v3
